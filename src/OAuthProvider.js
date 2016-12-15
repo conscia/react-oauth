@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import OAuth2               from './OAuth2';
 
-const Conscia = props => {
+const OAuthProvider = props => {
   const { config, textDisplay, className, successCallback, errorCallback } = props;
   config.successCallback = successCallback;
   config.errorCallback = errorCallback;
@@ -12,14 +12,14 @@ const Conscia = props => {
   );
 };
 
-Conscia.defaultProps = {
-  textDisplay: 'Sign in with Conscia'
+OAuthProvider.defaultProps = {
+  textDisplay: 'Sign in with OAuthProvider'
 };
 
-Conscia.propTypes = {
+OAuthProvider.propTypes = {
   config     : PropTypes.object.isRequired,
   textDisplay: PropTypes.string,
   className      : PropTypes.string
 };
 
-export default Conscia;
+export default OAuthProvider;

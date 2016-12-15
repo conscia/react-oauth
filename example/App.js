@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { render }           from 'react-dom';
-import { Conscia }         from '../src/index';
-import { configConscia }   from './config';
+import { OAuthProvider }         from '../src/index';
+import { providerConfig }   from './config';
 
 class App extends Component {
   constructor(props) {
     super(props);
   }
 
-  onConsciaLogin(data) {
-    window.localStorage.setItem('conscia_token', data.code || data);
+  onOAuthProviderLogin(data) {
+    window.localStorage.setItem('OAuthProvider_token', data.code || data);
   }
 
-  onConsciaLoginFailure (err) {
+  onOAuthProviderLoginFailure (err) {
     console.error(err);
   }
 
@@ -20,11 +20,11 @@ class App extends Component {
     return (
       <div>
         Hello world
-        <Conscia
-          config={configConscia}
-          successCallback={this.onConsciaLogin}
-          errorCallback={this.onConsciaLoginFailure}
-          textDisplay='Conscia Sign-in'
+        <OAuthProvider
+          config={providerConfig}
+          successCallback={this.onOAuthProviderLogin}
+          errorCallback={this.onOAuthProviderLoginFailure}
+          textDisplay='OAuthProvider Sign-in'
         />
       </div>
     );

@@ -1,4 +1,4 @@
 import React from 'react';
-import Conscia from './Conscia';
+import OAuthProvider from './OAuthProvider';
 
-export { Conscia }
+export { OAuthProvider }

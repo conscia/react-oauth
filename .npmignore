@@ -1,4 +1,7 @@
 .idea
+.editorconfig
+.eslintrc
+.eslintrc.json
 node_modules
 npm-debug.log
 example
