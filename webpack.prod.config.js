@@ -23,7 +23,6 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   externals : {
-    "react": "React",
     "bluebird" : "Promise",
     "querystring": "qs"
   },
