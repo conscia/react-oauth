@@ -22,10 +22,6 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  externals : {
-    "bluebird" : "Promise",
-    "querystring": "qs"
-  },
   devServer: {
     historyApiFallback: true,
     contentBase: './'
