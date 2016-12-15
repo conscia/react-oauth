@@ -2,6 +2,7 @@
   "name": "conscia-react-auth ",
   "version": "1.0.0",
   "description": "",
+  "main": "./dist/bundle.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "lint": "eslint src"
