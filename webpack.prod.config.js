@@ -23,8 +23,8 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   externals : {
-    "react": "react",
-    "bluebird" : "bluebird",
+    "react": "React",
+    "bluebird" : "Promise",
     "querystring": "qs"
   },
   devServer: {

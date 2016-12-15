@@ -74,7 +74,7 @@
 /* 2 */
 /***/ function(module, exports) {
 
-	module.exports = react;
+	module.exports = React;
 
 /***/ },
 /* 3 */
@@ -1694,7 +1694,7 @@
 /* 11 */
 /***/ function(module, exports) {
 
-	module.exports = bluebird;
+	module.exports = Promise;
 
 /***/ }
 /******/ ]);
