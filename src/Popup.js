@@ -44,41 +44,41 @@ class Popup extends React.Component {
     const redirectUri = url.parse(props.redirectUri);
     const redirectUriPath = redirectUri.host + redirectUri.pathname;
 
-    return new Promise((resolve, reject) => {
-    const redirectUri = url.parse(props.redirectUri);
-    const redirectUriPath = redirectUri.host + redirectUri.pathname;
+    return new Promise((resolve, reject) => { 
+      const redirectUri = url.parse(props.redirectUri);
+      const redirectUriPath = redirectUri.host + redirectUri.pathname;
 
-      const polling = setInterval(() => {
-        if (!window || window.closed || window.closed == undefined) {
-          clearInterval(polling);
-          reject(new Error('The popup window was closed'));
-        }
-        try {
-          const popupUrlPath = window.location.host + window.location.pathname;
-
-          if (popupUrlPath === redirectUriPath) {
-            if (window.location.search || window.location.hash) {
-              const query = qs.parse(window.location.search.substring(1).replace(/\/$/, ''));
-              const hash = qs.parse(window.location.hash.substring(1).replace(/[\/$]/, ''));
-              const params = Object.assign({}, query, hash);
-
-              if (params.error) {
-                 reject(new Error(params.error));
-              } else {
-                resolve(params);
-              }
-            } else {
-              reject(new Error('OAuth redirect has occurred but no query or hash parameters were found.'));
-            }
-            // cleanup
+        const polling = setInterval(() => {
+          if (!window || window.closed || window.closed == undefined) {
             clearInterval(polling);
-            window.close();
+            reject(new Error('The popup window was closed'));
           }
-        } catch (error) {
-          // Ignore DOMException: Blocked a frame with origin from accessing a cross-origin frame.
-          // A hack to get around same-origin security policy errors in Internet Explorer.
-        }
-      }, 500);
+          try {
+            const popupUrlPath = window.location.host + window.location.pathname;
+
+            if (popupUrlPath === redirectUriPath) {
+              if (window.location.search || window.location.hash) {
+                const query = qs.parse(window.location.search.substring(1).replace(/\/$/, ''));
+                const hash = qs.parse(window.location.hash.substring(1).replace(/[\/$]/, ''));
+                const params = Object.assign({}, query, hash);
+
+                if (params.error) {
+                   reject(new Error(params.error));
+                } else {
+                  resolve(params);
+                }
+              } else {
+                reject(new Error('OAuth redirect has occurred but no query or hash parameters were found.'));
+              }
+              // cleanup
+              clearInterval(polling);
+              window.close();
+            }
+          } catch (error) {
+            // Ignore DOMException: Blocked a frame with origin from accessing a cross-origin frame.
+            // A hack to get around same-origin security policy errors in Internet Explorer.
+          }
+        }, 500);
     });
   }
 
