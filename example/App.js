@@ -4,11 +4,11 @@ import { OAuthProvider }         from '../src/index';
 import { providerConfig }   from './config';
 
 class App extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
   }
 
-  onOAuthProviderLogin(data) {
+  onOAuthProviderLogin (data) {
     window.localStorage.setItem('OAuthProvider_token', data.code || data);
   }
 
@@ -16,7 +16,7 @@ class App extends Component {
     console.error(err);
   }
 
-  render() {
+  render () {
     return (
       <div>
         Hello world

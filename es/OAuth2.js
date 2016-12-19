@@ -70,7 +70,7 @@ var OAuth2 = function (_Component) {
         redirect_uri: props.redirectUri,
         scope: props.scope,
         display: 'popup',
-        response_type: 'code'
+        response_type: 'token'
       };
 
       var url = props.authorizationUrl + '?' + _querystring2.default.stringify(params);

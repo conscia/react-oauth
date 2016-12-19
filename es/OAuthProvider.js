@@ -41,7 +41,9 @@ OAuthProvider.defaultProps = {
 OAuthProvider.propTypes = {
   config: _react.PropTypes.object.isRequired,
   textDisplay: _react.PropTypes.string,
-  className: _react.PropTypes.string
+  className: _react.PropTypes.string,
+  successCallback: _react.PropTypes.func,
+  errorCallback: _react.PropTypes.func
 };
 
 exports.default = OAuthProvider;

@@ -77,8 +77,6 @@ var Popup = function (_React$Component) {
     key: 'pollPopup',
     value: function pollPopup(window) {
       var props = this.props;
-      var redirectUri = _url2.default.parse(props.redirectUri);
-      var redirectUriPath = redirectUri.host + redirectUri.pathname;
 
       return new _bluebird2.default(function (resolve, reject) {
         var redirectUri = _url2.default.parse(props.redirectUri);
@@ -132,5 +130,9 @@ var Popup = function (_React$Component) {
 
   return Popup;
 }(_react2.default.Component);
+
+Popup.propTypes = {
+  open: _react.PropTypes.bool
+};
 
 exports.default = Popup;

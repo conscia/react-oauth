@@ -3,23 +3,23 @@ import Popup                from './Popup';
 import qs                   from 'querystring';
 
 class OAuth2 extends Component {
-  constructor(props) {
-    console.log('hi')
+  constructor (props) {
+    console.log('hi');
     super(props);
     this.state = { popupOpen: false };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-    console.log('oauth2')
+  componentDidMount () {
+    console.log('oauth2');
   }
 
-  handleClick() {
+  handleClick () {
     this.setState({ popupOpen: true });
     console.log('clicked on button');
   }
 
-  render() {
+  render () {
     const props = this.props;
 
     const childrenWithProps = React.Children.map(props.children, (child) => {
@@ -31,7 +31,7 @@ class OAuth2 extends Component {
       redirect_uri: props.redirectUri,
       scope: props.scope,
       display: 'popup',
-      response_type: 'code'
+      response_type: 'token'
     };
 
     const url = props.authorizationUrl + '?' + qs.stringify(params);

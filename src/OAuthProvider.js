@@ -19,7 +19,9 @@ OAuthProvider.defaultProps = {
 OAuthProvider.propTypes = {
   config     : PropTypes.object.isRequired,
   textDisplay: PropTypes.string,
-  className      : PropTypes.string
+  className      : PropTypes.string,
+  successCallback : PropTypes.func,
+  errorCallback : PropTypes.func
 };
 
 export default OAuthProvider;
