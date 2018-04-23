@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   onOAuthProviderLogin (data) {
-    window.localStorage.setItem('OAuthProvider_token', data.code || data);
+    window.localStorage.setItem('OAuthProvider_token', JSON.stringify(data.code) || JSON.stringify(data));
   }
 
   onOAuthProviderLoginFailure (err) {
