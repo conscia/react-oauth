@@ -1,6 +1,6 @@
 {
-  "name": "react-oauth",
-  "version": "1.0.7",
+  "name": "@conscia/react-oauth",
+  "version": "1.0.8",
   "description": "",
   "main": "lib/index",
   "jsnext:main": "es/index",
